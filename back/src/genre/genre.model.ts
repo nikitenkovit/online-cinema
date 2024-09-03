@@ -2,19 +2,19 @@ import { prop } from '@typegoose/typegoose';
 import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
-export interface UserModel extends Base {}
+export interface GenreModel extends Base {}
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
-export class UserModel extends TimeStamps {
+export class GenreModel extends TimeStamps {
+	@prop()
+	name: string;
+
 	@prop({ unique: true })
-	email: string;
+	slug: string;
 
 	@prop()
-	password: string;
+	description: string;
 
-	@prop({ default: false })
-	isAdmin?: boolean;
-
-	@prop({ default: [] })
-	favorites?: [];
+	@prop()
+	icon: string;
 }
