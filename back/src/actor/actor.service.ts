@@ -3,10 +3,7 @@ import { ModelType } from '@typegoose/typegoose/lib/types';
 import { InjectModel } from 'nestjs-typegoose';
 import { ActorDto } from './actor.dto';
 import { ActorModel } from './actor.model';
-/*
-"url": "/uploads/actors/stephanie.jpg",
-		"name": "stephanie.jpg"
-*/
+
 @Injectable()
 export class ActorService {
 	constructor(
