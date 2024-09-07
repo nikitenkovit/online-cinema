@@ -148,8 +148,9 @@ export class MovieService {
 
 	/* Utilites */
 	async sendNotifications(dto: UpdateMovieDto) {
-		if (process.env.NODE_ENV !== 'development')
+		if (process.env.NODE_ENV !== 'development') {
 			await this.telegramService.sendPhoto(dto.poster);
+		}
 
 		const msg = `<b>${dto.title}</b>`;
 
